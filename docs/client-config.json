@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "bit-monk-coin": {
+      "type": "http",
+      "url": "https://coin-signal.airblock2026.workers.dev/mcp"
+    },
+    "bit-monk-us-stock": {
+      "type": "http",
+      "url": "https://stock-signal-us.airblock2026.workers.dev/mcp"
+    },
+    "bit-monk-kospi": {
+      "type": "http",
+      "url": "https://stock-signal-kr.airblock2026.workers.dev/mcp"
+    },
+    "bit-monk-commodity": {
+      "type": "http",
+      "url": "https://commodity-signal.airblock2026.workers.dev/mcp"
+    },
+    "bit-monk-fx": {
+      "type": "http",
+      "url": "https://fx-signal.airblock2026.workers.dev/mcp"
+    },
+    "bit-monk-macro": {
+      "type": "http",
+      "url": "https://inflation-signal.airblock2026.workers.dev/mcp"
+    },
+    "bit-monk-seoul-apt": {
+      "type": "http",
+      "url": "https://seoul-apt-signal.airblock2026.workers.dev/mcp"
+    },
+    "bit-monk-dubai": {
+      "type": "http",
+      "url": "https://dubai-property-signal.airblock2026.workers.dev/mcp"
+    }
+  }
+}
