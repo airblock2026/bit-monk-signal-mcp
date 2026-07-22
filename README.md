@@ -1,6 +1,6 @@
 # Bit Monk Signal — MCP Servers
 
-Market-timing **bottom/top signal** MCP servers for AI agents. Eight independent remote servers, one per market.
+Market-timing **bottom/top signal** MCP servers for AI agents. Ten independent remote servers, one per market.
 
 Each server answers one question: **is this asset at a bottom or a top right now?** — returning a verdict
 (`strong_buy` · `buy` · `neutral` · `sell` · `strong_sell`) and a **-100..+100 score**, aggregated from a
@@ -15,6 +15,8 @@ locked technical-indicator engine across weekly and monthly timeframes, plus mar
 | **Crypto** | `https://coin-signal.airblock2026.workers.dev/mcp` | BTC-USD, ETH-USD, SOL-USD … (197 coins) | `BTC-USD` |
 | **US stocks** | `https://stock-signal-us.airblock2026.workers.dev/mcp` | NVDA, AAPL, ^IXIC, QQQ … (S&P500 + indexes/ETFs, 535) | `NVDA` |
 | **Korea stocks** | `https://stock-signal-kr.airblock2026.workers.dev/mcp` | 005930.KS, ^KS11 … (KOSPI/KOSDAQ, 103) | `005930.KS` |
+| **China stocks** | `https://china-signal.airblock2026.workers.dev/mcp` | 600519.SS, 000001.SZ … (Shanghai/Shenzhen A-shares + indexes, 24) | `600519.SS` |
+| **Hong Kong stocks** | `https://hk-signal.airblock2026.workers.dev/mcp` | 0700.HK, ^HSI … (HSI + H-shares, 22) | `0700.HK` |
 | **Commodities** | `https://commodity-signal.airblock2026.workers.dev/mcp` | GC=F gold, CL=F oil, HG=F copper, ZC=F corn … (28 futures) | `GC=F` |
 | **Foreign exchange** | `https://fx-signal.airblock2026.workers.dev/mcp` | EURUSD=X, USDKRW=X, JPYKRW=X … (48 pairs) | `EURUSD=X` |
 | **Inflation & liquidity** | `https://inflation-signal.airblock2026.workers.dev/mcp` | US-CPI, US-PCE, US-FED, KR-CPI … (47 official series) | `US-CPI` |
@@ -55,7 +57,7 @@ Add to your MCP client config (example — Claude Desktop / Cursor):
 }
 ```
 
-All eight at once: [`docs/client-config.json`](docs/client-config.json). Machine-readable catalog: [`servers.json`](servers.json).
+All ten at once: [`docs/client-config.json`](docs/client-config.json). Machine-readable catalog: [`servers.json`](servers.json).
 
 Then call the free `pitch` tool first. Health check for any server: `GET /health`.
 
@@ -76,7 +78,7 @@ JSON-RPC to the remote endpoint:
 }
 ```
 
-`BIT_MONK_MARKET` selects the market — `coin` (default), `us`, `kr`, `commodity`, `fx`,
+`BIT_MONK_MARKET` selects the market — `coin` (default), `us`, `kr`, `cn`, `hk`, `commodity`, `fx`,
 `inflation`, `seoul`, `dubai`. `BIT_MONK_URL` overrides the endpoint outright. Requires Node 18+;
 a [`Dockerfile`](Dockerfile) is included for sandboxed runs.
 

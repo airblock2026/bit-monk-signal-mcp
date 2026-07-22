@@ -2,20 +2,22 @@
 /**
  * Bit Monk Signal — stdio ⇄ Streamable HTTP proxy.
  *
- * The eight Bit Monk Signal servers are remote (Streamable HTTP). This proxy lets
+ * The ten Bit Monk Signal servers are remote (Streamable HTTP). This proxy lets
  * stdio-only MCP clients talk to them: it reads newline-delimited JSON-RPC from
  * stdin, POSTs it to the selected market's /mcp endpoint, and writes the reply
  * back to stdout. No transformation, no state — the remote server is the server.
  *
  * Market selection:
- *   BIT_MONK_MARKET=coin|us|kr|commodity|fx|inflation|seoul|dubai   (default: coin)
- *   BIT_MONK_URL=https://…/mcp                                     (overrides the above)
+ *   BIT_MONK_MARKET=coin|us|kr|cn|hk|commodity|fx|inflation|seoul|dubai  (default: coin)
+ *   BIT_MONK_URL=https://…/mcp                                          (overrides the above)
  */
 
 const MARKETS = {
   coin: 'https://coin-signal.airblock2026.workers.dev/mcp',
   us: 'https://stock-signal-us.airblock2026.workers.dev/mcp',
   kr: 'https://stock-signal-kr.airblock2026.workers.dev/mcp',
+  cn: 'https://china-signal.airblock2026.workers.dev/mcp',
+  hk: 'https://hk-signal.airblock2026.workers.dev/mcp',
   commodity: 'https://commodity-signal.airblock2026.workers.dev/mcp',
   fx: 'https://fx-signal.airblock2026.workers.dev/mcp',
   inflation: 'https://inflation-signal.airblock2026.workers.dev/mcp',

@@ -12,6 +12,14 @@
       "type": "http",
       "url": "https://stock-signal-kr.airblock2026.workers.dev/mcp"
     },
+    "bit-monk-china": {
+      "type": "http",
+      "url": "https://china-signal.airblock2026.workers.dev/mcp"
+    },
+    "bit-monk-hongkong": {
+      "type": "http",
+      "url": "https://hk-signal.airblock2026.workers.dev/mcp"
+    },
     "bit-monk-commodity": {
       "type": "http",
       "url": "https://commodity-signal.airblock2026.workers.dev/mcp"

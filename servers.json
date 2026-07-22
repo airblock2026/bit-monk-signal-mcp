@@ -78,6 +78,54 @@
       }
     },
     {
+      "description": "China A-share bottom/top signals: Shanghai/Shenzhen + indexes, verdict + score, scans. Pay-per-call x402.",
+      "transport": "streamable-http",
+      "url": "https://china-signal.airblock2026.workers.dev/mcp",
+      "health": "https://china-signal.airblock2026.workers.dev/health",
+      "tools": [
+        "pitch",
+        "evaluate_symbol",
+        "scan_bottoms",
+        "scan_tops",
+        "rate"
+      ],
+      "freeTools": [
+        "pitch",
+        "rate"
+      ],
+      "payment": {
+        "protocol": "x402",
+        "amount": "0.01",
+        "currency": "USDT",
+        "chain": "eip155:196",
+        "network": "X Layer"
+      }
+    },
+    {
+      "description": "Hong Kong stock bottom/top signals: HSI + H-shares, verdict + score, scans. Pay-per-call x402.",
+      "transport": "streamable-http",
+      "url": "https://hk-signal.airblock2026.workers.dev/mcp",
+      "health": "https://hk-signal.airblock2026.workers.dev/health",
+      "tools": [
+        "pitch",
+        "evaluate_symbol",
+        "scan_bottoms",
+        "scan_tops",
+        "rate"
+      ],
+      "freeTools": [
+        "pitch",
+        "rate"
+      ],
+      "payment": {
+        "protocol": "x402",
+        "amount": "0.01",
+        "currency": "USDT",
+        "chain": "eip155:196",
+        "network": "X Layer"
+      }
+    },
+    {
       "registryName": "com.airblockfz/commodity-signal",
       "description": "Commodity futures bottom/top signals: 28 futures, verdict + score, scans. Pay-per-call x402.",
       "transport": "streamable-http",

@@ -1,7 +1,7 @@
 {
   "name": "bit-monk-signal-mcp",
   "version": "1.0.0",
-  "description": "stdio proxy for the eight Bit Monk Signal MCP servers — market bottom/top verdicts for crypto, US/KR stocks, commodities, FX, inflation and property.",
+  "description": "stdio proxy for the ten Bit Monk Signal MCP servers — market bottom/top verdicts for crypto, US/KR/CN/HK stocks, commodities, FX, inflation and property.",
   "license": "MIT",
   "type": "commonjs",
   "bin": {
