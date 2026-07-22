@@ -106,3 +106,10 @@ or quarterly; this is disclosed in each response.
 Built by **Air Block FZ** (Meydan, Dubai). The signal engine itself is proprietary and not published here —
 this repository documents the public MCP endpoints and their contracts, and ships the stdio proxy that
 reaches them.
+
+## License
+
+[MIT](LICENSE) — covers the contents of this repository: the stdio proxy (`src/proxy.js`) and the
+documentation. It does **not** grant any rights to the signal engine, indicator implementations or data
+pipelines behind the endpoints, which are proprietary and are not distributed here. Use of the endpoints
+themselves is subject to their pay-per-call terms (see [Payment](#payment)).
