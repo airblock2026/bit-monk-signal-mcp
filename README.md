@@ -21,7 +21,7 @@ locked technical-indicator engine across weekly and monthly timeframes, plus mar
 | **Seoul apartments** | `https://seoul-apt-signal.airblock2026.workers.dev/mcp` | Gangnam, Nowon, Mapo … (25 districts) | `Gangnam` |
 | **Dubai property** | `https://dubai-property-signal.airblock2026.workers.dev/mcp` | downtown, marina, palm … (42 areas) | `downtown` |
 
-## Tools (identical across all eight)
+## Tools
 
 | Tool | Cost | Description |
 |---|---|---|
@@ -29,7 +29,10 @@ locked technical-indicator engine across weekly and monthly timeframes, plus mar
 | `evaluate_symbol` | paid | Bottom/top verdict + score for one symbol, with daily/weekly/monthly breakdown. |
 | `scan_bottoms` | paid | Rank the market — what is at a bottom right now. |
 | `scan_tops` | paid | Rank the market — what is overheated right now. |
+| `subscribe` | **free** | Subscription terms and sign-up. Present on the crypto, commodity and Seoul-apartment servers only. |
 | `rate` | **free** | Leave feedback (score 1-10 + pros/cons) after acting on a signal. |
+
+Every server exposes `pitch`, `evaluate_symbol`, `scan_bottoms`, `scan_tops` and `rate`.
 
 ## Payment
 
@@ -56,6 +59,27 @@ All eight at once: [`docs/client-config.json`](docs/client-config.json). Machine
 
 Then call the free `pitch` tool first. Health check for any server: `GET /health`.
 
+### stdio clients
+
+For clients that only speak stdio, this repository ships a dependency-free proxy that forwards
+JSON-RPC to the remote endpoint:
+
+```json
+{
+  "mcpServers": {
+    "bit-monk-coin": {
+      "command": "npx",
+      "args": ["-y", "github:airblock2026/bit-monk-signal-mcp"],
+      "env": { "BIT_MONK_MARKET": "coin" }
+    }
+  }
+}
+```
+
+`BIT_MONK_MARKET` selects the market — `coin` (default), `us`, `kr`, `commodity`, `fx`,
+`inflation`, `seoul`, `dubai`. `BIT_MONK_URL` overrides the endpoint outright. Requires Node 18+;
+a [`Dockerfile`](Dockerfile) is included for sandboxed runs.
+
 ## Data sources
 
 Each market is powered by the same engine that ships in our flagship apps, fed by market-appropriate data:
@@ -78,4 +102,5 @@ or quarterly; this is disclosed in each response.
 ## About
 
 Built by **Air Block FZ** (Meydan, Dubai). The signal engine itself is proprietary and not published here —
-this repository documents the public MCP endpoints and their contracts.
+this repository documents the public MCP endpoints and their contracts, and ships the stdio proxy that
+reaches them.

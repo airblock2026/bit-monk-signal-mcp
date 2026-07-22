@@ -1,0 +1,35 @@
+{
+  "name": "bit-monk-signal-mcp",
+  "version": "1.0.0",
+  "description": "stdio proxy for the eight Bit Monk Signal MCP servers — market bottom/top verdicts for crypto, US/KR stocks, commodities, FX, inflation and property.",
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "bit-monk-signal-mcp": "src/proxy.js"
+  },
+  "main": "src/proxy.js",
+  "scripts": {
+    "start": "node src/proxy.js"
+  },
+  "files": [
+    "src",
+    "servers.json",
+    "docs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "trading-signals",
+    "crypto",
+    "stocks",
+    "x402"
+  ],
+  "homepage": "https://github.com/airblock2026/bit-monk-signal-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airblock2026/bit-monk-signal-mcp.git"
+  }
+}
